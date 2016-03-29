@@ -17,35 +17,32 @@
 
   </div>
   <div class="row">
-  	<div class="col-sm-2"><h3>TO DO <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
-  	<div class="col-sm-2"><h3>In Progress <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
-  	<div class="col-sm-2"><h3>QA <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
-  	<div class="col-sm-2"><h3>AT <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
-  	<div class="col-sm-2"><h3>DONE <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
-  </div>
-  <div class="row">
-  		<div id='todoPanel' data-status="T" class='col-sm-2 box'>
-  		  <h3 class="panelTitle">TO DO</h3>
+  		<div id='todoPanel' data-status="T" class='col-xs-6 col-sm-2 box'>
+  		  <div class="panelTitle"><h3>TO DO <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
 		  {{#each tasks "T"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
-		<div id='inProgressPanel' data-status="I" class='col-sm-2 box'>
+		<div id='inProgressPanel' data-status="I" class='col-xs-6 col-sm-2 box'>
+		  <div class="panelTitle"><h3>In Progress <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
 		  {{#each tasks "I"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
-		<div id='qaPanel' data-status="Q" class='col-sm-2 box'>
+		<div id='qaPanel' data-status="Q" class='col-xs-6 col-sm-2 box'>
+		  <div class="panelTitle"><h3>QA <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
 		  {{#each tasks "Q"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
-		<div id='atPanel' data-status="A" class='col-sm-2 box'>
+		<div id='atPanel' data-status="A" class='col-xs-6 col-sm-2 box'>
+		  <div class="panelTitle"><h3>AT <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
 		  {{#each tasks "A"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
-		<div id='donePanel' data-status="D" class='col-sm-2 box'>
+		<div id='donePanel' data-status="D" class='col-xs-6 col-sm-2 box'>
+		  <div class="panelTitle"><h3>DONE <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
 		  {{#each tasks "D"}}
 		    {{> taskItem}}
 		  {{/each}}

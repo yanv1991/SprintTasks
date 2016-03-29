@@ -9,20 +9,24 @@ Template.dragList.onRendered(function(){
   	document.querySelector('#qaPanel'), document.querySelector('#atPanel'), document.querySelector('#donePanel')], {
     moves: function (el, source, handle, sibling) {
       return el.className !== 'panelTitle';
-    },
-    copySortSource: false
+    }, 
+    revertOnSpill: true,
   });
   drake.on("drop", function(el, target, source, sibling){
-      var task = Blaze.getData(el);
-      var id = task._id;
-      delete task['_id'];
-      task.status = $(target).attr("data-status");
-      Tasks.update(id, {$set: task}, function(error) {
-        if (error) {
-          // display the error to the user
-          throwError(error.reason);
-        }
-      });
+      if(sibling && sibling.className === 'panelTitle'){
+        drake.cancel();
+      } else {
+        var task = Blaze.getData(el);
+        var id = task._id;
+        delete task['_id'];
+        task.status = $(target).attr("data-status");
+        Tasks.update(id, {$set: task}, function(error) {
+          if (error) {
+            // display the error to the user
+            throwError(error.reason);
+          }
+        });
+      }
   });
 });
 
