@@ -1,0 +1,15 @@
+<template name="articleItem">
+  <div class="col-md-6">
+    <div class="post">
+    <div class="col-md-12">
+      <h3><a href="{{pathFor 'articleItem'}}">{{title}}</a></h3>
+      <p>
+        submitted by {{author}}
+        <!--{{#if ownArticle}}<a href="{{pathFor 'articleEdit'}}">Edit</a>{{/if}}-->
+      </p>
+      <p>{{body}}</p>
+    </div>
+    <!--<a href="{{pathFor 'articlePage'}}" class="discuss btn btn-default">Discuss</a>-->
+  </div>
+  </div>
+</template>

@@ -1,0 +1,54 @@
+<template name="dragList">
+  <div class="row">
+  	<div class="col-xs-6 col-sm-6">
+  		<h1>Tasks</h1>
+  	</div>
+  	<div class="col-xs-6 col-sm-6">
+  		<div class="input-group pull-right addTask">
+		  <span class="input-group-addon">New</span>
+		  <input type="text" id="taskName" class="form-control" placeholder="enter task" aria-label="New Task">
+		  <div class="input-group-btn">  
+      		<button type="button" id="addTask" class="btn btn-default">
+      			<span class="glyphicon glyphicon-plus"></span>
+      		</button>
+      	  </div>
+		</div>
+  	</div>
+
+  </div>
+  <div class="row">
+  	<div class="col-sm-2"><h3>TO DO <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+  	<div class="col-sm-2"><h3>In Progress <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+  	<div class="col-sm-2"><h3>QA <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+  	<div class="col-sm-2"><h3>AT <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+  	<div class="col-sm-2"><h3>DONE <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+  </div>
+  <div class="row">
+  		<div id='todoPanel' data-status="T" class='col-sm-2 box'>
+  		  <h3 class="panelTitle">TO DO</h3>
+		  {{#each tasks "T"}}
+		    {{> taskItem}}
+		  {{/each}}
+		</div>
+		<div id='inProgressPanel' data-status="I" class='col-sm-2 box'>
+		  {{#each tasks "I"}}
+		    {{> taskItem}}
+		  {{/each}}
+		</div>
+		<div id='qaPanel' data-status="Q" class='col-sm-2 box'>
+		  {{#each tasks "Q"}}
+		    {{> taskItem}}
+		  {{/each}}
+		</div>
+		<div id='atPanel' data-status="A" class='col-sm-2 box'>
+		  {{#each tasks "A"}}
+		    {{> taskItem}}
+		  {{/each}}
+		</div>
+		<div id='donePanel' data-status="D" class='col-sm-2 box'>
+		  {{#each tasks "D"}}
+		    {{> taskItem}}
+		  {{/each}}
+		</div>
+  </div>
+</template>
