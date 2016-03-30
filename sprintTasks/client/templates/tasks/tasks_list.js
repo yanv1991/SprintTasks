@@ -1,4 +1,4 @@
-Template.dragList.helpers({
+Template.tasksList.helpers({
   tasks: function(status) {
     var userId = (Meteor.user()) ? Meteor.user()._id : String.Empty;
     var tasks = Tasks.find({userId: userId, status: status});
@@ -6,7 +6,7 @@ Template.dragList.helpers({
     return Session.get(status);
   }
 });
-Template.dragList.onRendered(function(){
+Template.tasksList.onRendered(function(){
   drake = dragula([document.querySelector('#todoPanel'), document.querySelector('#inProgressPanel'), 
     document.querySelector('#qaPanel'), document.querySelector('#atPanel'), document.querySelector('#donePanel')], {
     moves: function (el, source, handle, sibling) {
@@ -32,7 +32,7 @@ Template.dragList.onRendered(function(){
   });
 });
 
-Template.dragList.events({
+Template.tasksList.events({
   'click #addTask': function(e) {
     e.preventDefault();
 
@@ -49,7 +49,7 @@ Template.dragList.events({
   }
 });
 
-Template.dragList.events({
+Template.tasksList.events({
   'click #sortTodo': function(e, template) {
     e.preventDefault();
     var tasks = Session.get("T");

@@ -4,11 +4,17 @@ if (Articles.find().count() === 0) {
 
   // create two users
   var test1Id = Meteor.users.insert({
-    profile: { name: 'Test1' }
+    username: "Test1",
+    password: "Test1", 
+    profile: { name: 'Test1'}
   });
+
   var test1 = Meteor.users.findOne(test1Id);
+  console.log(test1);
   var test2Id = Meteor.users.insert({
-    profile: { name: 'Test2' }
+    username: "Test2",
+    password: "Test2",
+    profile: { name: 'Test2'}
   });
   var test2 = Meteor.users.findOne(test2Id);
 
@@ -35,16 +41,16 @@ if (Articles.find().count() === 0) {
     author: test1.profile.name,
     submitted: new Date(now - 12 * 3600 * 1000)
   });
+
+  Tasks.insert({
+    name: 'Tasks1',
+    status: 'T',
+    userId: test1._id
+  });
+
+  Tasks.insert({
+    name: 'Tasks2',
+    status: 'T',
+    userId: test1._id
+  });
 }
-
-Tasks.insert({
-  name: 'Tasks1',
-  status: 'T',
-  userId: '536AZswsijHRJjq4M'
-});
-
-Tasks.insert({
-  name: 'Tasks2',
-  status: 'T',
-  userId: '536AZswsijHRJjq4M'
-});

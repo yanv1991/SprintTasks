@@ -41,8 +41,3 @@ naturalSort = function(a, b) {
     }
     return 0;
 }
-
-// extend Array to have a natural sort
-Array.prototype.sortNat = function(){
-	return Array.prototype.sort.call(this, naturalSort)
-}

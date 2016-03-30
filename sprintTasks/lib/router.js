@@ -39,12 +39,12 @@ Router.route('/createArticle', {
   })
 });
 Router.route('/tasks', {
-  name: 'dragList',
+  name: 'tasksList',
   waitOn: function() {
     return Meteor.subscribe('tasks');
   },
   controller: UserController.extend({
-    template: 'dragList',
+    template: 'tasksList',
   })
 });
 
