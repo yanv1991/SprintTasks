@@ -14,7 +14,7 @@ if (Articles.find().count() === 0) {
 
   Articles.insert({
     title: 'Hello Meteor',
-  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate leo faucibus dui gravida, sit amet ornare leo posuere. Suspendisse potenti. Phasellus nisi nibh, venenatis nec nisi at, tincidunt eleifend justo. Nunc id nisi et elit maximus mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla nec viverra sapien, in pellentesque sapien. Aenean accumsan hendrerit mauris, in suscipit lectus varius et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed in felis tempus, dapibus magna ut, consequat tellus. Ut erat nisl, porttitor a sem in, pellentesque porttitor turpis. Nam dui augue, ultricies in ultricies at, pretium sed turpis. Sed scelerisque vitae nunc non dignissim. Integer lectus orci, laoreet quis vehicula sed, tempus nec libero. Cras quis magna ante. Donec dapibus justo libero, id semper libero dignissim ac. Duis condimentum, leo mollis pellentesque gravida, lacus erat mollis erat, sit amet posuere sapien nulla non ipsum. Morbi quis bibendum ante. Pellentesque eu semper orci. Fusce dignissim sem ac fringilla pulvinar. Praesent sit amet enim vel orci mollis pharetra id scelerisque ante. Phasellus vel leo in elit tempor sodales sed a sapien.',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate leo faucibus dui gravida, sit amet ornare leo posuere. Suspendisse potenti. Phasellus nisi nibh, venenatis nec nisi at, tincidunt eleifend justo. Nunc id nisi et elit maximus mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla nec viverra sapien, in pellentesque sapien. Aenean accumsan hendrerit mauris, in suscipit lectus varius et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed in felis tempus, dapibus magna ut, consequat tellus. Ut erat nisl, porttitor a sem in, pellentesque porttitor turpis. Nam dui augue, ultricies in ultricies at, pretium sed turpis. Sed scelerisque vitae nunc non dignissim. Integer lectus orci, laoreet quis vehicula sed, tempus nec libero. Cras quis magna ante. Donec dapibus justo libero, id semper libero dignissim ac. Duis condimentum, leo mollis pellentesque gravida, lacus erat mollis erat, sit amet posuere sapien nulla non ipsum. Morbi quis bibendum ante. Pellentesque eu semper orci. Fusce dignissim sem ac fringilla pulvinar. Praesent sit amet enim vel orci mollis pharetra id scelerisque ante. Phasellus vel leo in elit tempor sodales sed a sapien.',
     userId: test2._id,
     author: test2.profile.name,
     submitted: new Date(now - 7 * 3600 * 1000)
@@ -39,12 +39,12 @@ if (Articles.find().count() === 0) {
 
 Tasks.insert({
   name: 'Tasks1',
-  status: 'To do',
+  status: 'T',
   userId: '536AZswsijHRJjq4M'
 });
 
 Tasks.insert({
   name: 'Tasks2',
-  status: 'To do',
+  status: 'T',
   userId: '536AZswsijHRJjq4M'
 });

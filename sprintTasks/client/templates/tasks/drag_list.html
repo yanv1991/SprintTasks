@@ -1,9 +1,9 @@
 <template name="dragList">
   <div class="row">
-  	<div class="col-xs-6 col-sm-6">
-  		<h1>Tasks</h1>
+  	<div class="col-xs-6 col-sm-5">
+  		<h2>Tasks</h2>
   	</div>
-  	<div class="col-xs-6 col-sm-6">
+  	<div class="col-xs-6 col-sm-5">
   		<div class="input-group pull-right addTask">
 		  <span class="input-group-addon">New</span>
 		  <input type="text" id="taskName" class="form-control" placeholder="enter task" aria-label="New Task">
@@ -17,35 +17,37 @@
 
   </div>
   <div class="row">
+  	<div class="col-sm-12">
   		<div id='todoPanel' data-status="T" class='col-xs-6 col-sm-2 box'>
-  		  <div class="panelTitle"><h3>TO DO <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+  		  <div class="panelTitle"><h4>TO DO <button type="button" data-sort="asc" id="sortTodo" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon-sort"></i></button></h4></div>
 		  {{#each tasks "T"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
 		<div id='inProgressPanel' data-status="I" class='col-xs-6 col-sm-2 box'>
-		  <div class="panelTitle"><h3>In Progress <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+		  <div class="panelTitle"><h4>In Progress <button type="button" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon-sort"></i></button></h4></div>
 		  {{#each tasks "I"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
 		<div id='qaPanel' data-status="Q" class='col-xs-6 col-sm-2 box'>
-		  <div class="panelTitle"><h3>QA <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+		  <div class="panelTitle"><h4>QA <button type="button" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon-sort"></i></button></h4></div>
 		  {{#each tasks "Q"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
 		<div id='atPanel' data-status="A" class='col-xs-6 col-sm-2 box'>
-		  <div class="panelTitle"><h3>AT <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+		  <div class="panelTitle"><h4>AT <button type="button" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon-sort"></i></button></h4></div>
 		  {{#each tasks "A"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
 		<div id='donePanel' data-status="D" class='col-xs-6 col-sm-2 box'>
-		  <div class="panelTitle"><h3>DONE <button type="button" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-sort"></i></button></h3></div>
+		  <div class="panelTitle"><h4>DONE <button type="button" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon-sort"></i></button></h4></div>
 		  {{#each tasks "D"}}
 		    {{> taskItem}}
 		  {{/each}}
 		</div>
+  	</div>
   </div>
 </template>
