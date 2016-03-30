@@ -7,12 +7,6 @@ Template.dragList.helpers({
   }
 });
 Template.dragList.onRendered(function(){
-  tasks: function(status) {
-    var userId = (Meteor.user()) ? Meteor.user()._id : String.Empty;
-    var tasks = Tasks.find({userId: userId, status: status});
-    Session.set(status, tasks.fetch());
-    return Session.get(status);
-  }
   drake = dragula([document.querySelector('#todoPanel'), document.querySelector('#inProgressPanel'), 
     document.querySelector('#qaPanel'), document.querySelector('#atPanel'), document.querySelector('#donePanel')], {
     moves: function (el, source, handle, sibling) {
